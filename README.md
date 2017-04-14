@@ -40,7 +40,7 @@ do
 done
 ```
 
-now clean up when done:
+## clean up when done:
 
 ```bash
 #!/bin/sh
