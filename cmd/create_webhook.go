@@ -105,7 +105,7 @@ func create_webhook(credentials string, repo string,url string) {
     	fmt.Println("\x1b[31;1mNo response from github\x1b[0m")
     	
     } else {
-    	fmt.Printf("\x1b[32;1m%v\x1b[0m\n",*Hook.ID)
+    	fmt.Printf("%v\n",*Hook.ID)
     }
 
 }

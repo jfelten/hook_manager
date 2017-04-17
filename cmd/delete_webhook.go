@@ -28,8 +28,8 @@ import (
 
 // delete_webhookCmd represents the create_webhook command
 var delete_webhookCmd = &cobra.Command{
-	Use:   "create_webhook",
-	Short: "creates a webhook on github",
+	Use:   "delete_webhook",
+	Short: "deletes a webhook on github",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
@@ -38,7 +38,6 @@ This application is a tool to generate the needed files
 to quickly create_webhook a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO: Work your own magic here
-		fmt.Println("create_webhook called")
 		 delete_webhook(credentials, repo, hook_id)
 	},
 }

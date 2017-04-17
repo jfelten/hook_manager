@@ -43,7 +43,7 @@ to quickly create a Cobra application.`,
 		if err != nil {
 			panic(err)
 		}
-		fmt.Printf("\x1b[32;1m%s\x1b[0m",token)
+		fmt.Printf("%s\n",token)
 		
 
 	},

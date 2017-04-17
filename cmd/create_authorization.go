@@ -99,7 +99,7 @@ func create_authorization(account string) {
     	} else {
     		fmt.Printf("\n\x1b[32;1mwrote results to file: github_cred\x1b[0m")
     	}
-    	fmt.Printf("\n\x1b[32;1m%v\x1b[0m\n",key_content)
+    	fmt.Printf("\n%v\n",key_content)
     	
     }
 

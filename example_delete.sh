@@ -5,18 +5,14 @@ BOT_USER_ID=jfelten
 eval $(cat github_cred)
 
 ##int the create script we created a text file with each line containing <HOOK_ID>:<REPO>
-for hook in (created_hooks)
-do
+while read hook; do
     echo "${hook}"
-    values=(${hook//:/ }) #split the line into an array
+    values=( ${hook//:/ } ) #split the line into an array
+    echo "$GOPATH/bin/hook_manager delete_webhook --credentials=${BOT_USER_ID}:${GITHUB_AUTH_TOKEN} --hook_id=${values[0]} --repo="${values[1]}"
+"
     #now delete each hook
-    $GOPATH/bin/hook_manager delete_webhook --credentials=${BOT_USER_ID}:${GITHUB_AUTH_TOKEN} --id=${values[0]} --repo=${values[1]}"
-done
+    $GOPATH/bin/hook_manager delete_webhook --credentials=${BOT_USER_ID}:${GITHUB_AUTH_TOKEN} --hook_id=${values[0]} --repo="${values[1]}"
+done <./created_hooks
 
 #now make sure to remove the created token
-$GOPATH/bin/hook_manager delete_authorization --credentials=${BOT_USER_ID}:${GITHUB_AUTH_TOKEN} --id=${GITHUB_AUTH_ID}
-
-
-
-
-
+$GOPATH/bin/hook_manager delete_authorization --account=${BOT_USER_ID} --auth_id=${GITHUB_AUTH_ID}
