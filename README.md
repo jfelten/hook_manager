@@ -10,7 +10,7 @@ The idea is to create hooks that last the life time of a CI system deployment an
 Make sure $GOPATH is set then:  
 
 ```bash
-go install https://github.com/jfelten/hook_manager
+go install github.com/jfelten/hook_manager
 ```
 
 ## Usage - see the example scripts: example_create.sh and example_delete.sh
