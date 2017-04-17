@@ -21,7 +21,7 @@ go install github.com/jfelten/hook_manager
 ## Usage - 
 
 ```bash
-or independent CI solutions that need to manage webhooks.
+For independent CI solutions that need to manage webhooks.
 
 Usage:
   hook_manager [command]
