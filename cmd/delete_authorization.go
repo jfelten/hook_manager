@@ -39,7 +39,7 @@ var delete_authorizationCmd = &cobra.Command{
 hook_manager delete_authorization --owner=<MY_BOT_USER>`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO: Work your own magic here
-		delete_authorization(account, id)
+		delete_authorization(account, auth_id)
 	},
 }
 
