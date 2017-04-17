@@ -2,20 +2,25 @@
 
 ## This is a simple utility designed to automate the management of github hooks. 
 
-The purpose is to make it possible to deploy webhook consumers in a kubernetes cluster with automatic consfiguration and set-up.
+This is a series of command line tools designed to help script automated github webhook setup and configuration.  The original intent isto automate giuhub hooks kubernetes prow CI.
 The idea is to create hooks that last the life time of a CI system deployment and are then discarded when the CI process completes.
+
+How it works:
+
+set up process --> create new access token (prompt for password) --> Uee token to create webhooks for lsit of repos --> on application shut down remove hooks and revoke access token
 
 ## Installation
 
 Make sure $GOPATH is set then:  
 
 ```bash
+go get github.com/jfelten/hook_manager
 go install github.com/jfelten/hook_manager
 ```
 
 ## Usage - see the example scripts: example_create.sh and example_delete.sh
 
-A new github auth token is generated for a bot account and hooks are created using the generate auth token under the bots account.  The only human interaction is to enter the bot's password.  The generate auth and hook ids are stored in files on the local system while the process is running.
+The script creates a new github account (bot) auth token and then uses it to genreate hooks for a list of repositories  The only human interaction is to enter the bot's password.  The generated auth and hook ids are stored in files on the local system while the process is running.
 
 ```bash
 #!/bin/sh
