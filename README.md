@@ -18,7 +18,29 @@ go get github.com/jfelten/hook_manager
 go install github.com/jfelten/hook_manager
 ```
 
-## Usage - see the example scripts: example_create.sh and example_delete.sh
+## Usage - 
+
+```bash
+or independent CI solutions that need to manage webhooks.
+
+Usage:
+  hook_manager [command]
+
+Available Commands:
+  create_authorization creates an github auth token that has permission to admin webhooks for automated management
+  create_hmac          A brief description of your command
+  create_webhook       creates a webhook on github
+  delete_authorization creates an github auth token that has permission to admin webhooks for automated management
+  delete_webhook       deletes a webhook on github
+  help                 Help about any command
+
+Flags:
+      --config string   config file (default is $HOME/.hook_manager.yaml)
+  -t, --toggle          Help message for toggle
+
+Use "hook_manager [command] --help" for more information about a command.
+```
+## Example scripts: example_create.sh and example_delete.sh
 
 The script creates a new github account (bot) auth token and then uses it to genreate hooks for a list of repositories  The only human interaction is to enter the bot's password.  The generated auth and hook ids are stored in files on the local system while the process is running.
 
