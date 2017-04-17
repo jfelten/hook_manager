@@ -18,7 +18,7 @@ go get github.com/jfelten/hook_manager
 go install github.com/jfelten/hook_manager
 ```
 
-## Usage - 
+## Usage 
 
 ```bash
 For independent CI solutions that need to manage webhooks.
