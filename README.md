@@ -7,7 +7,7 @@ The idea is to create hooks that last the life time of a CI system deployment an
 
 How it works:
 
-set up process --> create new access token (prompt for password) --> Uee token to create webhooks for lsit of repos --> on application shut down remove hooks and revoke access token
+set up process --> create new access token (prompt for password) --> Uee token to create webhooks for list of repos --> on application shut down remove hooks and revoke access token
 
 ## Installation
 
