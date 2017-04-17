@@ -57,7 +57,7 @@ func init() {
 	// delete_authorizationCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	
 	delete_authorizationCmd.Flags().IntVar(&auth_id, "auth_id", 0, "github authorization id")
-	create_webhookCmd.Flags().StringVar(&credentials, "credentials", "", "credentials in the format <USER>:<PASSWORD_OR_TOKEN>")
+	delete_authorizationCmd.Flags().StringVar(&credentials, "credentials", "", "credentials in the format <USER>:<PASSWORD_OR_TOKEN>")
 	
 }
 
