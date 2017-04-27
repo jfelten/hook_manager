@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"os"
 	"fmt"
 	"context"
 	"time"
@@ -101,9 +102,10 @@ func create_webhook(credentials string, repo string,url string) {
     Hook, resp, err := client.Repositories.CreateHook(ctx, repo_owner, repo_name, hook)
     if err != nil {
     	fmt.Printf("\n\x1b[31;1m%s\x1b[0m\n",err.Error())
+    	os.Exit(1)
     } else if (resp == nil) {
     	fmt.Println("\x1b[31;1mNo response from github\x1b[0m")
-    	
+    	os.Exit(1)
     } else {
     	fmt.Printf("%v\n",*Hook.ID)
     }

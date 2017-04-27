@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"os"
 	"fmt"
 	"crypto/rand"
 	"encoding/base64"
@@ -77,6 +78,7 @@ func GenerateRandomBytes(n int) ([]byte, error) {
     // Note that err == nil only if we read len(b) bytes.
 	if err != nil {
 		return nil, err
+		os.Exit(1)
 	}
 
 	return b, nil

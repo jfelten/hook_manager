@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"os"
 	"fmt"
 	"context"
 	"strings"
@@ -96,6 +97,7 @@ func create_authorization(account string) {
     	err := ioutil.WriteFile("./github_cred",bytes,0644)
     	if err != nil {
     		fmt.Println("\x1b[31;1munable to write results to file\x1b[0m")
+    		os.Exit(1)
     	} else {
     		fmt.Printf("\n\x1b[32;1mwrote results to file: github_cred\x1b[0m")
     	}

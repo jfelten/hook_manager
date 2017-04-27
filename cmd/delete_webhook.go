@@ -15,6 +15,7 @@
 package cmd
 
 import (
+	"os"
 	"fmt"
 	"context"
 	"strings"
@@ -79,9 +80,10 @@ func delete_webhook(credentials string, repo string, id int) {
     resp, err := client.Repositories.DeleteHook(ctx, repo_owner, repo_name, id)
     if err != nil {
     	fmt.Printf("\n\x1b[31;1m%s\x1b[0m\n",err.Error())
+    	os.Exit(1)
     } else if (resp == nil) {
     	fmt.Println("\x1b[31;1mNo response from github\x1b[0m")
-    	
+    	os.Exit(1)
     } else {
     	fmt.Printf("\x1b[32;1m%v deleted.\x1b[0m\n",id)
     }
