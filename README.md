@@ -76,7 +76,7 @@ done
 
 ```
 
-## clean up when done:
+### clean up when done:
 
 ```bash
 #!/bin/sh
@@ -100,7 +100,7 @@ $GOPATH/bin/hook_manager delete_authorization --account=${BOT_USER_ID} --auth_id
 
 ```
 
-To generate a github token as a kubernetes secret:
+### To generate a github token as a kubernetes secret using the docker image:
 
 ```bash
 #!/bin/bash
