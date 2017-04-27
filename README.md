@@ -30,9 +30,11 @@ Usage:
 or using docker
 
 ```bash
-docker run -it jfelten/hook_manager /hook_manager [command]
+  docker run -it jfelten/hook_manager /hook_manager [command]
 ```
 Available Commands:
+
+```bash
   create_authorization creates an github auth token that has permission to admin webhooks for automated management
   create_hmac          A brief description of your command
   create_webhook       creates a webhook on github
@@ -45,6 +47,7 @@ Flags:
   -t, --toggle          Help message for toggle
 
 Use "hook_manager [command] --help" for more information about a command.
+```
 
 ### Example scripts: example_create.sh and example_delete.sh
 
