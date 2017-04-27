@@ -46,8 +46,8 @@ Flags:
   -t, --toggle          Help message for toggle
 
 Use "hook_manager [command] --help" for more information about a command.
-```
-## Example scripts: example_create.sh and example_delete.sh
+
+### Example scripts: example_create.sh and example_delete.sh
 
 The script creates a new github account (bot) auth token and then uses it to genreate hooks for a list of repositories  The only human interaction is to enter the bot's password.  The generated auth and hook ids are stored in files on the local system while the process is running.
 
