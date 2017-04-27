@@ -21,7 +21,6 @@ There is also a public docker image available.
 
 ## Usage 
 
-```bash
 For independent CI solutions that need to manage webhooks.
 
 Usage:
