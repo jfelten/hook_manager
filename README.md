@@ -2,7 +2,7 @@
 
 ## This is a simple utility designed to automate the management of github hooks. 
 
-This is a series of command line tools designed to help script automated github webhook setup and configuration.  The original intent isto automate giuhub hooks kubernetes prow CI.
+This is a command line tool designed for scripting automated github webhook setup and configuration.  The original intent isto automate giuhub hooks kubernetes prow CI.
 The idea is to create hooks that last the life time of a CI system deployment and are then discarded when the CI process completes.
 
 How it works:
