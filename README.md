@@ -1,13 +1,12 @@
 # Hook Manager
 
-## This is a simple utility designed to automate the management of github hooks. 
+## This is a simple utility designed to automate the management and life cycle of github hooks. 
 
-This is a command line tool designed for scripting automated github webhook setup and configuration.  The original intent isto automate giuhub hooks kubernetes prow CI.
-The idea is to create hooks that last the life time of a CI system deployment and are then discarded when the CI process completes.
+This is a command line tool designed for scripting automated github webhook setup and configuration.  The idea is to create hooks that last the life time of a process making it ideal for container based frameworks like kubernetes.
 
 How it works:
 
-set up process --> create new access token (prompt for password) --> Uee token to create webhooks for list of repos --> on application shut down remove hooks and revoke access token
+set up process --> create new access token (prompt for password) --> Use token to create webhooks for list of repos --> on application shut down remove hooks and revoke access token
 
 ## Local Installation
 
