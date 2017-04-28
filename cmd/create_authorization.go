@@ -21,6 +21,7 @@ import (
 	"strings"
 	"golang.org/x/crypto/ssh/terminal"
 	"syscall"
+	"bufio"
 	"io/ioutil"
 	"github.com/google/go-github/github"
 
@@ -66,6 +67,12 @@ func init() {
 
 func create_authorization(account string) {
 	
+	if account == "" {
+		reader := bufio.NewReader(os.Stdin)
+		fmt.Print("Enter GitHub username: ")
+		username, _ := reader.ReadString('\n')
+		account = strings.TrimSpace(username)
+	}
 
 	fmt.Printf("%s's GitHub Password: ",account)
 	bytePassword, _ := terminal.ReadPassword(int(syscall.Stdin))
