@@ -95,7 +95,7 @@ func create_webhook(credentials string, repo string, url string, hmac string) {
     	UpdatedAt: &t,
     	Name:      &name,
     	URL:       &url,
-    	Events:    []string{"push", "pull-request"},
+    	Events:    []string{"*"},
     	Active:    &active,
     	ID:        &id,
 		Config:    config,
