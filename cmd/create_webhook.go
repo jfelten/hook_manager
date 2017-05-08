@@ -43,7 +43,7 @@ This application is a tool to generate the needed files
 to quickly create_webhook a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO: Work your own magic here
-		 create_webhook(credentials, repo, url)
+		 create_webhook(credentials, repo, url, hmac)
 	},
 }
 
@@ -68,7 +68,7 @@ func init() {
 }
 
 
-func create_webhook(credentials string, repo string,url string) {
+func create_webhook(credentials string, repo string, url string, hmac string) {
 	username := strings.Split(credentials,":")[0]
 	password := strings.Split(credentials,":")[1]
 	repo_owner := strings.Split(repo,"/")[0]
@@ -89,6 +89,7 @@ func create_webhook(credentials string, repo string,url string) {
 	id := 1
 	config := make(map[string]interface{})
 	config["url"]=url
+	config["secret"]=hmac
 	hook := &github.Hook {
 		CreatedAt: &t,
     	UpdatedAt: &t,

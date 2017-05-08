@@ -30,13 +30,8 @@ var (
 // create_hmacCmd represents the create_hmac command
 var create_hmacCmd = &cobra.Command{
 	Use:   "create_hmac",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Generates a random string to be used as a hook secret",
+	Long: `Webhooks are made more secure with secrets - especially those that never touch human hands.  This is meant to be run in a script and used as a parameter in the create_webhook command.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO: Work your own magic here
 		// Example: this will give us a 44 byte, base64 encoded output
