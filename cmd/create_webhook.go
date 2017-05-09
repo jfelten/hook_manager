@@ -29,6 +29,7 @@ var (
 	repo string
 	url string
 	credentials string
+	content_type string
 )
 
 // create_webhookCmd represents the create_webhook command
@@ -61,7 +62,7 @@ func init() {
 	// create_webhookCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	
 	create_webhookCmd.Flags().StringVar(&hmac, "hmac", "", "hmac key used by the hook")
-	create_webhookCmd.Flags().StringVar(&repo, "repo", "", "The name of the git repository in the format <OWNER>/<REPO_NAME>")
+	create_webhookCmd.Flags().StringVar(&content_type, "content_type", "", "content type used by the github_hook")
 	create_webhookCmd.Flags().StringVar(&url, "url", "", "The url that receives hook events")
 	create_webhookCmd.Flags().StringVar(&credentials, "credentials", "", "credentials in the format <USER>:<PASSWORD_OR_TOKEN>")
 
@@ -90,6 +91,9 @@ func create_webhook(credentials string, repo string, url string, hmac string) {
 	config := make(map[string]interface{})
 	config["url"]=url
 	config["secret"]=hmac
+	if (content_type != "") {
+		config["content_type"]=content_type
+	}
 	hook := &github.Hook {
 		CreatedAt: &t,
     	UpdatedAt: &t,
