@@ -65,7 +65,7 @@ func init() {
 	create_webhookCmd.Flags().StringVar(&content_type, "content_type", "", "content type used by the github_hook")
 	create_webhookCmd.Flags().StringVar(&url, "url", "", "The url that receives hook events")
 	create_webhookCmd.Flags().StringVar(&credentials, "credentials", "", "credentials in the format <USER>:<PASSWORD_OR_TOKEN>")
-
+	create_webhookCmd.Flags().StringVar(&repo, "repo", "", "The name of the git repository in the format <OWNER>/<REPO_NAME>")
 }
 
 
