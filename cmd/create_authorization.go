@@ -87,7 +87,7 @@ func create_authorization(account string) {
 	var client = github.NewClient(tp.Client())
 	
 	// get all pages of results
-	scopes := []github.Scope{ "public_repo", "admin:repo_hook", "notifications"}
+	scopes := []github.Scope{ "repo", "admin:repo_hook", "notifications"}
 	auth_request := &github.AuthorizationRequest {
 		Scopes:       scopes,
     	Note:         &note,

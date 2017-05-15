@@ -34,12 +34,23 @@ or using docker
 Available Commands:
 
 ```bash
+For independent CI solutions that need to manage webhooks.
+
+Usage:
+  hook_manager [command]
+
+Available Commands:
   create_authorization creates an github auth token that has permission to admin webhooks for automated management
-  create_hmac          A brief description of your command
+  create_hmac          Generates a random string to be used as a hook secret
   create_webhook       creates a webhook on github
   delete_authorization creates an github auth token that has permission to admin webhooks for automated management
   delete_webhook       deletes a webhook on github
   help                 Help about any command
+
+Flags:
+      --config string   config file (default is $HOME/.hook_manager.yaml)
+  -h, --help            help for hook_manager
+  -t, --toggle          Help message for toggle
 
 Flags:
       --config string   config file (default is $HOME/.hook_manager.yaml)
