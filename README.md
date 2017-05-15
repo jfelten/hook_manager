@@ -1,6 +1,6 @@
 # Hook Manager
 
-## This is a simple utility designed to automate the management and life cycle of github hooks. 
+## Aa simple utility designed to automate the management and life cycle of github hooks. 
 
 This is a command line tool designed for scripting automated github webhook setup and configuration.  The idea is to create hooks that last the life time of a process making it ideal for container based frameworks like kubernetes.
 
