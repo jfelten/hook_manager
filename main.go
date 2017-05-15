@@ -14,7 +14,7 @@
 
 package main
 
-import "./cmd"
+import "github.com/jfelten/hook_manager/cmd"
 
 func main() {
 	cmd.Execute()
